@@ -30,7 +30,7 @@ if(empty($_GET['page'])) {
         throw new Exception("page doesn't exist");
       }
     break;
-    default: throw new Exception("page doesn't e exist");
+    default: throw new Exception("page doesn't exist");
   }
 }
 
