@@ -14,20 +14,23 @@ if(empty($_GET['page'])) {
       $book->view('home.view');
     break;
     case 'books':
-    if(empty($url[1])) {
-      $book->showBooks();
-    }
-    else if($url[1] == "add") {
-      $book->addBookValidation();
-    }
-    else if($url[1] == "edit") {
-      $book->editBookValidation($url[2]);
-    }
-    else if($url[1] == "remove") {
-      $book->removeBookValidation();
-    }
+      if(empty($url[1])) {
+        $book->showBooks();
+      }
+      else if($url[1] == "add") {
+        $book->addBookValidation();
+      }
+      else if($url[1] == "edit") {
+        $book->editBookValidation($url[2]);
+      }
+      else if($url[1] == "remove") {
+        $book->removeBookValidation();
+      } 
+      else {
+        throw new Exception("page doesn't exist");
+      }
     break;
-    default: echo 'book doesn\'t exist';
+    default: throw new Exception("page doesn't e exist");
   }
 }
 
