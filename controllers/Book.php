@@ -80,7 +80,10 @@ class Book extends Controller {
         $this->view('editBook.view', $data);
       }
     } else {
-      $book = $this->bookManager->getBookById($id);
+        $book = $this->bookManager->getBookById($id);
+        if($book === false) {
+          throw new Exception("Id of the book doesn't exist");
+        }
       $this->view('editBook.view', $book);
     }
 }
