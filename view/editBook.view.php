@@ -1,4 +1,4 @@
-<?php 
+<?php
 ob_start();
 ?>
 <div class="container">
@@ -17,15 +17,15 @@ ob_start();
     </div>
     <div class="mb-3">
       <label class="form-label" >Topic</label>
-      <input class="form-control <?php echo !empty($data['error_topic']) ? 'is-invalid' : ''; ?>" type="text" name="topic" value="<?= $data['topic'] ?>"> 
-      <span class="invalid-feedback"><?php echo !empty($data['error_topic']) ? $data['error_topic'] : ''; ?></span>  
+      <input class="form-control <?php echo !empty($data['error_topic']) ? 'is-invalid' : ''; ?>" type="text" name="topic" value="<?= $data['topic'] ?>">
+      <span class="invalid-feedback"><?php echo !empty($data['error_topic']) ? $data['error_topic'] : ''; ?></span>
     </div>
     <div>
-      <input type="submit" name="submit" value="Edit a book" class="btn btn-primary mb-3"> 
+      <input type="submit" name="submit" value="Edit a book" class="btn btn-primary mb-3">
     </div>
   </form>
 </div>
-<?php 
+<?php
 $content = ob_get_clean();
 $title = 'Edit book';
 require 'view/template.php';
